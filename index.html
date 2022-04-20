@@ -1,0 +1,81 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<title>Wordle Unlimited</title>
+		<meta name="description" content="Guess the hidden word in 6 tries. Play Wordle as many times as you want." />
+
+		<link rel="manifest" href="manifest.json" />
+
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="application-name" content="Wordle Unlimited" />
+		<meta name="apple-mobile-web-app-title" content="Wordle Unlimited" />
+		<meta name="theme-color" content="#ffffff" />
+		<meta name="msapplication-navbutton-color" content="#6aaa64" />
+		<meta name="msapplication-TileColor" content="#6aaa64" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="msapplication-starturl" content="/" />
+
+		<link rel="icon" href="img/favicon/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-chrome-192x192.png" />
+		<link rel="icon" type="image/png" sizes="512x512" href="img/favicon/android-chrome-512x512.png" />
+		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#6aaa64" />
+
+		<!-- STYLE -->
+		<link rel="stylesheet" href="style.css" />
+
+		<script style="display: none">
+			var tvt = tvt || {};
+			tvt.captureVariables = function (a) {
+				for (var b = new Date(), c = {}, d = Object.keys(a || {}), e = 0, f; (f = d[e]); e++)
+					if (a.hasOwnProperty(f) && 'undefined' != typeof a[f])
+						try {
+							var g = [];
+							c[f] = JSON.stringify(a[f], function (h, k) {
+								try {
+									if ('function' !== typeof k) {
+										if ('object' === typeof k && null !== k) {
+											if (k instanceof HTMLElement || k instanceof Node || -1 != g.indexOf(k)) return;
+											g.push(k);
+										}
+										return k;
+									}
+								} catch (m) {}
+							});
+						} catch (h) {}
+				a = document.createEvent('CustomEvent');
+				a.initCustomEvent('TvtRetrievedVariablesEvent', !0, !0, { variables: c, date: b });
+				window.dispatchEvent(a);
+			};
+			window.setTimeout(function () {
+				tvt.captureVariables({
+					'dataLayer.hide': (function (a) {
+						a = a.split('.');
+						for (var b = window, c = 0; c < a.length && ((b = b[a[c]]), b); c++);
+						return b;
+					})('dataLayer.hide'),
+					gaData: window['gaData'],
+					dataLayer: window['dataLayer'],
+				});
+			}, 2000);
+		</script>
+	</head>
+	<!-- <body class="nightmode"> -->
+	<body>
+		<script>
+			(function () {
+				// Defining the hash before the main bundle allows the bundle access window.hash
+				window.wordle = window.wordle || {};
+				window.wordle.hash = 'e65ce0a5';
+			})();
+		</script>
+		<script src="main.js"></script>
+
+		<!-- GAME APP -->
+		<game-app></game-app>
+	</body>
+</html>
